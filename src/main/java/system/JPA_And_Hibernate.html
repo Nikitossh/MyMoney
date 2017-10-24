@@ -58,6 +58,7 @@
     Что говорит нам всего лишь о том факте, что HQL использует какие-то свои фичи поверх стандарта JPQL.
     Еще одним способом обращения к БД является Criteria, которая раньше была фичей Hibernate, а сейчас отнесена к JPA.
     Также поддерживается старый добрый SQL. Пишем привычные нам запросы как String и передаем методу. <!--TODO указать метод создания native запросов SQL -->
+    Запросы JPQL бывают следущих видов: Query, TypedQuery и NamedQuery
 </p>
 
 <p>
@@ -71,9 +72,17 @@
 </p>
 
 <p>
+    <!--TODO Вынести это в отдельный файл и запомнить где он хранится!!!-->
     Пошаговое создание git репозитория.
     Зашел в директорию проекта cd ~/Documents/project/MyMoney
     сделал git init
+    Добавил все файлы в репозиторий git add *
+    git commit -m 'Added all files'
+    git remote add mymoney git@github.com:Nikitossh/mymoney.git
+    ssh-keygen -t rsa -b 4096 -C "nikitossh@mail.ru"
+    ssh-add ~/.ssh/id_rsa
+    git pull -u mymoney master
+    git push -u mymoney master
 </p>
 
 </body>

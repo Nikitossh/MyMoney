@@ -31,6 +31,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.query.Query;
 
 
 /**
@@ -73,16 +74,26 @@ public class CostsTest extends TestCase {
             System.out.println(costs.getId() + " " + costs.getValue() + " " + costs.getCategory_id() + " " + costs.getComment());
         }
         session.getTransaction().commit();
+        session.close();
+    }
 
-        // And one more query
+    public void testSelectSomeCosts() {
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery(
+                "select c " +
+                "from costs c " +
+                "where c.comment like :catid")
+                .setParameter("catid", "s%");
         session.beginTransaction();
-        List result2 = session.createQuery("SELECT c FROM costs AS c JOIN category.id AS ca WHERE category.category='food' ").list();
-        for (Costs costs2 : (List<Costs>) result2) {
-            System.out.println(costs2.getValue() + costs2.getComment());
+        List result = query.list();
+        for (Costs costs : (List<Costs>) result) {
+            System.out.println(costs.getId() + " " + costs.getValue() + " " + costs.getCategory_id() + " " + costs.getComment());
         }
         session.getTransaction().commit();
         session.close();
     }
+
+
 
 
 }

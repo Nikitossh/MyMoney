@@ -1,6 +1,5 @@
 package system.dao;
 
-import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import system.model.User;
 

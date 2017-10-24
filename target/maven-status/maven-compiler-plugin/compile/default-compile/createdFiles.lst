@@ -1,6 +1,11 @@
 system/dao/UserDao.class
+system/entity/Costs.class
+system/controller/UserController.class
+system/service/CostService.class
+system/service/UserService.class
+system/entity/Category.class
 system/model/User.class
 system/controller/ExpensesController.class
-system/controller/UserController.class
-system/service/UserService.class
-system/service/CostService.class
+system/entity/Date.class
+system/dao/HibernateUtil.class
+system/entity/Budget.class

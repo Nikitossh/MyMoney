@@ -1,6 +1,11 @@
-/home/nik/gs-rest-service/mvc/src/main/java/system/dao/UserDao.java
-/home/nik/gs-rest-service/mvc/src/main/java/system/service/UserService.java
-/home/nik/gs-rest-service/mvc/src/main/java/system/service/CostService.java
-/home/nik/gs-rest-service/mvc/src/main/java/system/controller/ExpensesController.java
-/home/nik/gs-rest-service/mvc/src/main/java/system/model/User.java
-/home/nik/gs-rest-service/mvc/src/main/java/system/controller/UserController.java
+/home/nik/Documents/projects/MyMoney/src/main/java/system/entity/Category.java
+/home/nik/Documents/projects/MyMoney/src/main/java/system/service/CostService.java
+/home/nik/Documents/projects/MyMoney/src/main/java/system/dao/HibernateUtil.java
+/home/nik/Documents/projects/MyMoney/src/main/java/system/entity/Date.java
+/home/nik/Documents/projects/MyMoney/src/main/java/system/entity/Budget.java
+/home/nik/Documents/projects/MyMoney/src/main/java/system/entity/Costs.java
+/home/nik/Documents/projects/MyMoney/src/main/java/system/controller/ExpensesController.java
+/home/nik/Documents/projects/MyMoney/src/main/java/system/dao/UserDao.java
+/home/nik/Documents/projects/MyMoney/src/main/java/system/model/User.java
+/home/nik/Documents/projects/MyMoney/src/main/java/system/service/UserService.java
+/home/nik/Documents/projects/MyMoney/src/main/java/system/controller/UserController.java
