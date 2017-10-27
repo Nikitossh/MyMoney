@@ -1,13 +1,17 @@
 package system.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity(name = "costs")
+@Table(name = "costs")
 public class Costs {
     @Id
     private Long id;
 
+    @Column(name = "value")
     private Long value;
     private String comment;
     private Long category_id;

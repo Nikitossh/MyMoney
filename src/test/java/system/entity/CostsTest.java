@@ -82,12 +82,30 @@ public class CostsTest extends TestCase {
         Query query = session.createQuery(
                 "select c " +
                 "from costs c " +
-                "where c.comment like :catid")
-                .setParameter("catid", "s%");
+                "where c.comment like :comment")
+                .setParameter("comment", "s%");
         session.beginTransaction();
         List result = query.list();
         for (Costs costs : (List<Costs>) result) {
             System.out.println(costs.getId() + " " + costs.getValue() + " " + costs.getCategory_id() + " " + costs.getComment());
+        }
+        session.getTransaction().commit();
+        session.close();
+    }
+
+    // NativeQuery
+    public void testGetMonthCosts() {
+        Session session = sessionFactory.openSession();
+        List<Object[]> costs = session.createNativeQuery("SELECT category.category, SUM(costs.value) AS value\n" +
+                "FROM costs\n" +
+                "INNER JOIN category ON costs.category_id=category.id\n" +
+                "INNER JOIN date ON costs.date_id=date.id\n" +
+                "WHERE MONTH(date)=MONTH(NOW())\n" +
+                "AND YEAR(date)=YEAR(NOW())\n" +
+                "GROUP BY category;").getResultList();
+        session.beginTransaction();
+        for (Object[] objects : costs) {
+            System.out.println(objects.toString());
         }
         session.getTransaction().commit();
         session.close();
