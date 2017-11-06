@@ -8,8 +8,9 @@ import javax.persistence.PersistenceContext;
 import java.util.Collection;
 
 public class CostRepositoryImpl implements CostRepository {
+
     @PersistenceContext
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Override
     @SuppressWarnings("unchecked")
