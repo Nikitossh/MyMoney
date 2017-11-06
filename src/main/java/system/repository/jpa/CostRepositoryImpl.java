@@ -12,7 +12,7 @@ public class CostRepositoryImpl implements CostRepository {
     EntityManager entityManager;
 
     @Override
-    @SuppressWarnings("uncheked")
+    @SuppressWarnings("unchecked")
     public Collection<Cost> findAll() {
         return this.entityManager.createQuery("select c costs as c from costs ").getResultList();
     }

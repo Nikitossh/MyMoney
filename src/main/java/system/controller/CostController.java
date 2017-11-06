@@ -10,7 +10,7 @@ import system.service.ExpensesServiceImpl;
 
 @Controller
 @RequestMapping(value = "/expenses")
-public class ExpensesController {
+public class CostController {
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String ShowCostsList(String name, Model model) {
