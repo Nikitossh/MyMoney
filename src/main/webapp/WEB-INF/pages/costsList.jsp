@@ -11,7 +11,7 @@
     <title>CostsList</title>
 </head>
 <body>
-This page must return list of costs.
+This page must return list of cost.
 <br>And I am ${name}!
 </body>
 </html>

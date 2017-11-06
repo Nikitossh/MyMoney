@@ -114,10 +114,10 @@
         3. Вывести эти данные в браузер.
 Выполнение:
 Запрос в чистом SQL будет выглядеть так:
-SELECT category.category, SUM(costs.value) AS value
-FROM costs
-INNER JOIN category ON costs.category_id=category.id
-INNER JOIN date ON costs.date_id=date.id
+SELECT category.category, SUM(cost.value) AS value
+FROM cost
+INNER JOIN category ON cost.category_id=category.id
+INNER JOIN date ON cost.date_id=date.id
 WHERE MONTH(date)=MONTH(NOW())
 AND YEAR(date)=YEAR(NOW())
 GROUP BY category;

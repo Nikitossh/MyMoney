@@ -38,7 +38,7 @@ import org.hibernate.query.Query;
  * Test for connection and some queries with table bablo.costs
  * @author Nikita Shesterikov
  */
-public class CostsTest extends TestCase {
+public class CostTest extends TestCase {
     private SessionFactory sessionFactory;
 
     @Override
@@ -70,8 +70,8 @@ public class CostsTest extends TestCase {
         session.beginTransaction();
         // Name "costs" in database with lowercase must be the the same there
         List result = session.createQuery("from costs ").list();
-        for (Costs costs : (List<Costs>) result) {
-            System.out.println(costs.getId() + " " + costs.getValue() + " " + costs.getCategory_id() + " " + costs.getComment());
+        for (Cost cost : (List<Cost>) result) {
+            System.out.println(cost.getId() + " " + cost.getValue() + " " + cost.getCategory_id() + " " + cost.getComment());
         }
         session.getTransaction().commit();
         session.close();
@@ -86,8 +86,8 @@ public class CostsTest extends TestCase {
                 .setParameter("comment", "s%");
         session.beginTransaction();
         List result = query.list();
-        for (Costs costs : (List<Costs>) result) {
-            System.out.println(costs.getId() + " " + costs.getValue() + " " + costs.getCategory_id() + " " + costs.getComment());
+        for (Cost cost : (List<Cost>) result) {
+            System.out.println(cost.getId() + " " + cost.getValue() + " " + cost.getCategory_id() + " " + cost.getComment());
         }
         session.getTransaction().commit();
         session.close();

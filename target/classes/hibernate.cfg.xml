@@ -36,7 +36,7 @@
         <!-- <property name="hbm2ddl.auto">create</property> -->
 
         <!-- Names the annotated entity class -->
-        <mapping class="system.entity.Costs"/>
+        <mapping class="system.entity.Cost"/>
         <mapping class="system.entity.Category"/>
         <mapping class="system.entity.Budget"/>
         <mapping class="system.entity.Date"/>

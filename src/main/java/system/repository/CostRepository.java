@@ -1,9 +1,9 @@
 package system.repository;
 
-import system.entity.Costs;
+import system.entity.Cost;
 
 import java.util.Collection;
 
 public interface CostRepository {
-    Collection<Costs> findAll(); 
+    Collection<Cost> findAll();
 }
