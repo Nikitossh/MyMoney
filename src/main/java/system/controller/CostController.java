@@ -10,6 +10,8 @@ import system.entity.Costs;
 import system.service.ExpensesService;
 import system.service.ExpensesServiceImpl;
 
+import java.util.Map;
+
 @Controller
 @RequestMapping(value = "/expenses")
 public class CostController {
@@ -23,13 +25,10 @@ public class CostController {
 
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String ShowCostsList(String name, Model model) {
+    public String ShowCostsList(Map<String, Object> model) {
         Costs costs = new Costs();
         costs.getCostList().addAll(this.expensesService.findCosts());
-        //cost.getCostList().
-        //ExpensesServiceImpl.findCosts();
-        // Здесь вызов метода из ExpensesService
-        model.addAttribute("name", name);
+        model.put("costs", costs);
         return "costsList";
     }
 
