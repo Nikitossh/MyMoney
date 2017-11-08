@@ -2,13 +2,10 @@ package system.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import system.entity.Cost;
 import system.entity.Costs;
 import system.service.ExpensesService;
-import system.service.ExpensesServiceImpl;
 
 import java.util.Map;
 
@@ -29,7 +26,7 @@ public class CostController {
         Costs costs = new Costs();
         costs.getCostList().addAll(this.expensesService.findCosts());
         model.put("costs", costs);
-        return "costsList";
+        return "costs/costsList";
     }
 
 }

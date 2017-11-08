@@ -1,18 +1,17 @@
 package system.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity(name = "costs")
 @Table(name = "costs")
 public class Cost {
     @Id
+    @GeneratedValue
     private Long id;
 
     @Column(name = "value")
     private Long value;
+    @Basic(optional = false, fetch = FetchType.LAZY)
     private String comment;
     private Long category_id;
     private Long date_id;

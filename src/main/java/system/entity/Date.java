@@ -1,13 +1,17 @@
 package system.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "date")
 public class Date {
     @Id
+    @GeneratedValue
     private Long id;
-    private java.sql.Date date;
+
+    @Column(name = "date")
+    // Почему не работает при добавлении аннотации?
+    //@Temporal(TemporalType.DATE)
+    private java.time.LocalDate date;
 
     public Date() {
     }
@@ -20,11 +24,11 @@ public class Date {
         this.id = id;
     }
 
-    public java.sql.Date getDate() {
+    public java.time.LocalDate getDate() {
         return date;
     }
 
-    public void setDate(java.sql.Date date) {
+    public void setDate(java.time.LocalDate date) {
         this.date = date;
     }
 }
