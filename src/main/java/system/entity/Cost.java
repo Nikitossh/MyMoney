@@ -13,18 +13,18 @@ public class Cost {
     private Long value;
     @Basic(optional = false, fetch = FetchType.LAZY)
     private String comment;
-    private Long category_id;
-    private Long date_id;
+    private Category category;
+    private Date date;
 
   public Cost() {
   }
 
-  public Cost(Long id, Long value, String comment, Long category_id, Long date_id) {
+  public Cost(Long id, Long value, String comment, Category category, Date date) {
     this.id = id;
     this.value = value;
     this.comment = comment;
-    this.category_id = category_id;
-    this.date_id = date_id;
+    this.category = category;
+    this.date = date;
   }
 
   public Long getId() {
@@ -51,20 +51,20 @@ public class Cost {
     this.comment = comment;
   }
 
-  public Long getCategory_id() {
-    return category_id;
+  public Category getCategory() {
+    return category;
   }
 
-  public void setCategory_id(Long category_id) {
-    this.category_id = category_id;
+  public void setCategory(Category category) {
+    this.category = category;
   }
 
-  public Long getDate_id() {
-    return date_id;
+  public Date getDate() {
+    return date;
   }
 
-  public void setDate_id(Long date_id) {
-    this.date_id = date_id;
+  public void setDate(Date date) {
+    this.date = date;
   }
 
   @Override
@@ -73,8 +73,8 @@ public class Cost {
             "id=" + id +
             ", value=" + value +
             ", comment='" + comment + '\'' +
-            ", category_id=" + category_id +
-            ", date_id=" + date_id +
+            ", category" + category +
+            ", date=" + date +
             '}';
   }
 }

@@ -1,9 +1,10 @@
 package system.entity;
 
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity(name="category")
+@Embeddable
 public class Category {
     @Id
     private Long id;
