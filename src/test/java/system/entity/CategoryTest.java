@@ -23,12 +23,13 @@
  */
 package system.entity;
 
-//import junit.framework.TestCase;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -37,11 +38,11 @@ import java.util.List;
  * Test for connection and some queries with table bablo.costs
  * @author Nikita Shesterikov
  */
-public class CategoryTest {
-    private SessionFactory sessionFactory;
+class CategoryTest {
+    private static SessionFactory sessionFactory;
 
-    @Test
-    protected void setUp() throws Exception {
+    @BeforeAll
+    static void beforeAll() {
         // A SessionFactory is set up once for an application!
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure() // configures settings from hibernate.cfg.xml
@@ -55,15 +56,16 @@ public class CategoryTest {
         }
     }
 
-    @Test
-    protected void tearDown() throws Exception {
+    @AfterAll
+    static void afterAll() {
         if (sessionFactory != null) {
             sessionFactory.close();
         }
     }
 
+    @Test
     @SuppressWarnings({"unchecked"})
-    public void testBasicUsage() {
+    void testBasicUsage() {
         // Pull all values from database
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -76,7 +78,8 @@ public class CategoryTest {
         session.close();
     }
 
-    public void testBudgetSelect() {
+    @Test
+    void testBudgetSelect() {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         List result = session.createQuery("from budget").list();

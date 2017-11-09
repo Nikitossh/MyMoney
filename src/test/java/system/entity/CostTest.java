@@ -25,13 +25,14 @@ package system.entity;
 
 import java.util.List;
 
-//import junit.framework.TestCase;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.query.Query;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 
@@ -39,12 +40,13 @@ import org.junit.jupiter.api.Test;
  * Test for connection and some queries with table bablo.costs
  * @author Nikita Shesterikov
  */
-public class CostTest {
-    private SessionFactory sessionFactory;
 
-    @Test
-    protected void setUp() throws Exception {
-        // A SessionFactory is set up once for an application!
+class CostTest {
+    private static SessionFactory sessionFactory;
+
+
+    @BeforeAll
+    static void init() {
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure() // configures settings from hibernate.cfg.xml
                 .build();
@@ -57,15 +59,17 @@ public class CostTest {
         }
     }
 
-    @Test
-    protected void tearDown() throws Exception {
+    @AfterAll
+    static void done() {
         if (sessionFactory != null) {
             sessionFactory.close();
         }
     }
 
+    @Test
     @SuppressWarnings({"unchecked"})
-    public void testBasicUsage() {
+    void testBasicUsage() {
+
         // Pull all values from database
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -78,7 +82,8 @@ public class CostTest {
         session.close();
     }
 
-    public void testSelectSomeCosts() {
+    @Test
+    void testSelectSomeCosts() {
         Session session = sessionFactory.openSession();
         Query query = session.createQuery(
                 "select c " +
@@ -94,8 +99,9 @@ public class CostTest {
         session.close();
     }
 
+    @Test
     // NativeQuery
-    public void testGetMonthCosts() {
+    void testGetMonthCosts() {
         Session session = sessionFactory.openSession();
         List<Object[]> costs = session.createNativeQuery("SELECT category.category, SUM(costs.value) AS value\n" +
                 "FROM costs\n" +

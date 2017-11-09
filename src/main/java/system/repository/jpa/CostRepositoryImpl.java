@@ -17,6 +17,6 @@ public class CostRepositoryImpl implements CostRepository {
     @Override
     @SuppressWarnings("unchecked")
     public Collection<Cost> findAll() {
-        return this.entityManager.createQuery("select costs from costs ").getResultList();
+        return this.entityManager.createQuery("from costs ").getResultList();
     }
 }

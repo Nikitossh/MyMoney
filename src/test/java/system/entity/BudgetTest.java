@@ -1,24 +1,21 @@
 package system.entity;
 
-//import junit.framework.TestCase;
-
-//import junit.framework.TestCase;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+class BudgetTest {
+    private static SessionFactory sessionFactory;
 
-public class BudgetTest {
-    private SessionFactory sessionFactory;
-
-    @Test
-    protected void setUp() throws Exception{
+    @BeforeAll
+    static void init() {
         // A SessionFactory is set up once for an application!
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure()
@@ -30,14 +27,15 @@ public class BudgetTest {
         }
     }
 
-    @Test
-    protected void tearDown() throws Exception{
+    @AfterAll
+    static void done() {
         if (sessionFactory != null) {
             sessionFactory.close();
         }
     }
 
-    public void testBudget() {
+    @Test
+    void testBudget() {
         // Создаем сессию с помощью фабрики
         Session session = sessionFactory.openSession();
         // Начинаем транзакцию

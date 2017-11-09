@@ -1,23 +1,22 @@
 package system.entity;
 
-//import junit.framework.TestCase;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+class DateTest {
+    private static SessionFactory factory;
 
-public class DateTest {
-    SessionFactory factory = null;
-
-    @Test
-    protected void setUp() {
-        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+    @BeforeAll
+    static void beforeAll() {
+    final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure()
                 .build();
         try {
@@ -28,14 +27,15 @@ public class DateTest {
         }
     }
 
-    @Test
-     protected void tearDown() {
+    @AfterAll
+     static void afterAll() {
         if (factory != null) {
             factory.close();
         }
     }
 
-    public void testDate() {
+    @Test
+    void testDate() {
         Session session = factory.openSession();
         session.beginTransaction();
         List result = session.createQuery("from date").list();
