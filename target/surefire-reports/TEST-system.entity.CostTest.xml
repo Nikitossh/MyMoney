@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="system.entity.CostTest" time="1.185" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="system.entity.CostTest" time="1.345" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2017.2.5"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -60,7 +60,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="system.entity.CostTest" name="testBasicUsage" time="1.063"/>
-  <testcase classname="system.entity.CostTest" name="testSelectSomeCosts" time="0.067"/>
-  <testcase classname="system.entity.CostTest" name="testGetMonthCosts" time="0.055"/>
+  <testcase classname="system.entity.CostTest" name="testBasicUsage" time="1.16"/>
+  <testcase classname="system.entity.CostTest" name="testSelectSomeCosts" time="0.12"/>
+  <testcase classname="system.entity.CostTest" name="testGetMonthCosts" time="0.065"/>
 </testsuite>

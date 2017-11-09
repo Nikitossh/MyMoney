@@ -1,20 +1,21 @@
 package system.entity;
 
-import junit.framework.TestCase;
+//import junit.framework.TestCase;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class DateTest extends TestCase {
+public class DateTest {
     SessionFactory factory = null;
 
-    @Override
+    @Test
     protected void setUp() {
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure()
@@ -27,7 +28,7 @@ public class DateTest extends TestCase {
         }
     }
 
-    @Override
+    @Test
      protected void tearDown() {
         if (factory != null) {
             factory.close();

@@ -1,16 +1,21 @@
 package system.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "budget")
 public class Budget {
     @Id
+    @GeneratedValue
     private Long id;
+    @Basic
     private Long amount;
     private String comment;
-    private Long category_id;
-    private Long date_id;
+
+    @ManyToOne
+    private Category category;
+
+    @ManyToOne
+    private Date date;
 
     public Budget() {
     }
@@ -39,19 +44,20 @@ public class Budget {
         this.comment = comment;
     }
 
-    public Long getCategory_id() {
-        return category_id;
+
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCategory_id(Long category_id) {
-        this.category_id = category_id;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
-    public Long getDate_id() {
-        return date_id;
+    public Date getDate() {
+        return date;
     }
 
-    public void setDate_id(Long date_id) {
-        this.date_id = date_id;
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

@@ -13,7 +13,9 @@ public class Cost {
     private Long value;
     @Basic(optional = false, fetch = FetchType.LAZY)
     private String comment;
+    @ManyToOne
     private Category category;
+    @ManyToOne
     private Date date;
 
   public Cost() {

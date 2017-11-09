@@ -2,21 +2,22 @@ package system.entity;
 
 //import junit.framework.TestCase;
 
-import junit.framework.TestCase;
+//import junit.framework.TestCase;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class BudgetTest extends TestCase {
+public class BudgetTest {
     private SessionFactory sessionFactory;
 
-    @Override
+    @Test
     protected void setUp() throws Exception{
         // A SessionFactory is set up once for an application!
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
@@ -29,7 +30,7 @@ public class BudgetTest extends TestCase {
         }
     }
 
-    @Override
+    @Test
     protected void tearDown() throws Exception{
         if (sessionFactory != null) {
             sessionFactory.close();
@@ -43,7 +44,7 @@ public class BudgetTest extends TestCase {
         session.beginTransaction();
         List result = session.createQuery("from budget ").list();
         for (Budget budget : (List<Budget>) result) {
-            System.out.println(budget.getId() + "  " + budget.getAmount() + "  " + budget.getCategory_id() + budget.getComment());
+            System.out.println(budget.getId() + "  " + budget.getAmount() + "  " + budget.getCategory() + budget.getComment());
         }
         // Коммитим транзакцию, можем дописать запросы еще до этого и они будут исполнены все или не исполнено ни одного
         session.getTransaction().commit();

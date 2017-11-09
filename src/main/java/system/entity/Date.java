@@ -2,7 +2,7 @@ package system.entity;
 
 import javax.persistence.*;
 
-@Embeddable
+@Entity(name = "date")
 public class Date {
     @Id
     @GeneratedValue

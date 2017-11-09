@@ -23,12 +23,13 @@
  */
 package system.entity;
 
-import junit.framework.TestCase;
+//import junit.framework.TestCase;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
@@ -36,10 +37,10 @@ import java.util.List;
  * Test for connection and some queries with table bablo.costs
  * @author Nikita Shesterikov
  */
-public class CategoryTest extends TestCase {
+public class CategoryTest {
     private SessionFactory sessionFactory;
 
-    @Override
+    @Test
     protected void setUp() throws Exception {
         // A SessionFactory is set up once for an application!
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
@@ -54,7 +55,7 @@ public class CategoryTest extends TestCase {
         }
     }
 
-    @Override
+    @Test
     protected void tearDown() throws Exception {
         if (sessionFactory != null) {
             sessionFactory.close();

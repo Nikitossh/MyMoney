@@ -45,7 +45,11 @@
                         @Basic types - обычно маппит одну колонку таблицы БД к одиночному, не агрегированному Java-типу
                         Все эти типы приведены в таблицы ниже. Также там же расписано опциональные штуки при маппинге
                         https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#basic
-                        @Embeddable types -
+                        @Embeddable types - встраиваемые типы. Тут все понятно, а главное это дало мне понимание отличия Value types от
+                        Entity types. Вообще эти штуки удобны для разбиения таблицы на разные классы, которыми нам проще управлять с точки зрения ООП.
+                        При работе с множественными
+                        Перегрузка Embeddable types. JPA определяет аннотацию @AttributeOverride и @AssociationOverride
+
                         Collections
                     </p>
             </p>

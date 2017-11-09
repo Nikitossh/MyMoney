@@ -1,16 +1,22 @@
 package system.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Embeddable
+@Entity(name = "category")
 public class Category {
     @Id
     private Long id;
+    @Column(name = "category")
     private String category;
 
     public Category() {
+    }
+
+    public Category(String category) {
+        this.category = category;
     }
 
     public Long getId() {

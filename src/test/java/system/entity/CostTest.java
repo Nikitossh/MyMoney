@@ -25,23 +25,24 @@ package system.entity;
 
 import java.util.List;
 
-import junit.framework.TestCase;
+//import junit.framework.TestCase;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.query.Query;
+import org.junit.jupiter.api.Test;
 
 
 /**
  * Test for connection and some queries with table bablo.costs
  * @author Nikita Shesterikov
  */
-public class CostTest extends TestCase {
+public class CostTest {
     private SessionFactory sessionFactory;
 
-    @Override
+    @Test
     protected void setUp() throws Exception {
         // A SessionFactory is set up once for an application!
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
@@ -56,7 +57,7 @@ public class CostTest extends TestCase {
         }
     }
 
-    @Override
+    @Test
     protected void tearDown() throws Exception {
         if (sessionFactory != null) {
             sessionFactory.close();
@@ -71,7 +72,7 @@ public class CostTest extends TestCase {
         // Name "costs" in database with lowercase must be the the same there
         List result = session.createQuery("from costs ").list();
         for (Cost cost : (List<Cost>) result) {
-            System.out.println(cost.getId() + " " + cost.getValue() + " " + cost.getCategory_id() + " " + cost.getComment());
+            System.out.println(cost.getId() + " " + cost.getValue() + " " + cost.getCategory() + " " + cost.getComment());
         }
         session.getTransaction().commit();
         session.close();
@@ -87,7 +88,7 @@ public class CostTest extends TestCase {
         session.beginTransaction();
         List result = query.list();
         for (Cost cost : (List<Cost>) result) {
-            System.out.println(cost.getId() + " " + cost.getValue() + " " + cost.getCategory_id() + " " + cost.getComment());
+            System.out.println(cost.getId() + " " + cost.getValue() + " " + cost.getCategory() + " " + cost.getComment());
         }
         session.getTransaction().commit();
         session.close();
