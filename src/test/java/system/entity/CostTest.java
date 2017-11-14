@@ -101,7 +101,7 @@ class CostTest {
 
     @Test
     // NativeQuery
-    void testGetMonthCosts() {
+    public void testGetMonthCosts() {
         Session session = sessionFactory.openSession();
         List<Object[]> costs = session.createNativeQuery("SELECT category.category, SUM(costs.value) AS value\n" +
                 "FROM costs\n" +

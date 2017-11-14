@@ -2,3 +2,4 @@ system/entity/CostTest.class
 system/entity/BudgetTest.class
 system/entity/DateTest.class
 system/entity/CategoryTest.class
+system/entity/Cost2Test.class
