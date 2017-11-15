@@ -18,30 +18,25 @@
 
 <%@ page session="false" trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%--<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--<%@ taglib prefix="mymoney" tagdir="/WEB-INF/tags" %>--%>
-<%--<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>--%>
 
-
-<petclinic:layout pageName="costs">
     <h2>Costs</h2>
 
-    <table id="costsTable" class="table table-striped">
-        <thead>
+    <table align="left" bgcolor="#a9a9a9" border="3px">
         <tr>
             <th>id</th>
+            <th>date</th>
             <th>sum</th>
             <th>cat_id</th>
             <th>comment</th>
         </tr>
-        </thead>
-        <tbody>
         <c:forEach items="${costs.costList}" var="cost">
-            <c:out value="${cost.comment}"/>
-        <br>
-                    </tbody>
+            <tr>
+                <td><c:out value="${cost.id}"/></td>
+                <td><c:out value="${cost.date.date}"/></td>
+                <td><c:out value="${cost.value}"/></td>
+                <td><c:out value="${cost.category.category}"/></td>
+                <td><c:out value="${cost.comment}"/></td>
+            </tr>
         </c:forEach>
     </table>
-</petclinic:layout>
-

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="389c3d78-0c4e-4501-9e29-833d1611557c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/system/JPA_And_Hibernate.html" afterPath="$PROJECT_DIR$/src/main/java/system/JPA_And_Hibernate.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/costs/costsList.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/costs/costsList.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -141,8 +141,8 @@
       <file leaf-file-name="CostRepositoryImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/system/repository/jpa/CostRepositoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="28" column="76" lean-forward="false" selection-start-line="28" selection-start-column="76" selection-end-line="28" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -151,8 +151,8 @@
       <file leaf-file-name="costsList.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/costs/costsList.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="40" column="40" lean-forward="false" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+            <state relative-caret-position="353">
+              <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -238,10 +238,10 @@
         <option value="$PROJECT_DIR$/src/test/java/system/entity/CostTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/system/entity/Cost2Test.java" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/system/repository/jpa/CostRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/costs/costsList.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/system/JPA_And_Hibernate.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/costs/costsList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/system/repository/jpa/CostRepositoryImpl.java" />
       </list>
     </option>
   </component>
@@ -274,7 +274,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1920" />
     <option name="width" value="1881" />
     <option name="height" value="1165" />
@@ -804,7 +804,7 @@
       <workItem from="1509022649685" duration="41000" />
       <workItem from="1509024016769" duration="4755000" />
       <workItem from="1509188513728" duration="42530000" />
-      <workItem from="1510589950002" duration="11071000" />
+      <workItem from="1510589950002" duration="12950000" />
     </task>
     <servers />
   </component>
@@ -841,7 +841,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137645000" />
+    <option name="totallyTimeSpent" value="139524000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -853,7 +853,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1916" y="-4" width="1928" height="1173" extended-state="7" />
+    <frame x="1916" y="-4" width="1928" height="1173" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1278,14 +1279,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/system/repository/jpa/CostRepositoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/spring-config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1306,10 +1299,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/system/repository/jpa/CostRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="28" column="76" lean-forward="false" selection-start-line="28" selection-start-column="76" selection-end-line="28" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/costs/costsList.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="40" column="40" lean-forward="false" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+        <state relative-caret-position="353">
+          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
           <folding />
         </state>
       </provider>
