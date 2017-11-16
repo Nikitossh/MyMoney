@@ -20,4 +20,5 @@ public class ExpensesServiceImpl implements ExpensesService {
     public Collection<Cost> findCosts() {
         return costRepository.findAll();
     }
+
 }

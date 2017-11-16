@@ -20,7 +20,9 @@ public class CostController {
         this.expensesService = expensesService;
     }
 
-
+    /** Outputting ALL costs in /mvc/expenses/list
+     * @param model automatically by Spring ???
+     * @return view costsList.jsp */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String ShowCostsList(Map<String, Object> model) {
         Costs costs = new Costs();
@@ -28,5 +30,6 @@ public class CostController {
         model.put("costs", costs);
         return "costs/costsList";
     }
+
 
 }

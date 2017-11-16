@@ -16,22 +16,17 @@ public class CostRepositoryImpl implements CostRepository {
 
     @PersistenceContext
     private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("bla");
-
-    //private EntityManager entityManager;
+    private EntityManager em = emf.createEntityManager();
 
     @Override
     @SuppressWarnings("unchecked")
-    public List<Cost> findAll() {
-        EntityManager entityManager = emf.createEntityManager();
+    public Collection<Cost> findAll() {
 
-//        return this.entityManager.createQuery("from costs ").getResultList();
-        entityManager.getTransaction().begin();
-        List<Cost> costs = entityManager.createQuery("select c from costs c " ).getResultList();
-        entityManager.getTransaction().commit();
-        entityManager.close();
-//        for (Cost cost : costs) {
-//            System.out.println(cost.getId() + " " + cost.getValue() + " " + cost.getCategory() + " " + cost.getComment());
-//        }
+        em.getTransaction().begin();
+        List<Cost> costs = em.createQuery("select c from costs c " ).getResultList();
+        em.getTransaction().commit();
+        em.close();
         return costs;
     }
+
 }
