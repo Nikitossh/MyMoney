@@ -1,4 +1,5 @@
 system/entity/CostTest.class
+system/controller/CategoryControllerTest.class
 system/entity/BudgetTest.class
 system/entity/DateTest.class
 system/entity/CategoryTest.class

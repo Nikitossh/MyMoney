@@ -21,7 +21,6 @@ public class CostRepositoryImpl implements CostRepository {
     @Override
     @SuppressWarnings("unchecked")
     public Collection<Cost> findAll() {
-
         em.getTransaction().begin();
         List<Cost> costs = em.createQuery("select c from costs c " ).getResultList();
         em.getTransaction().commit();

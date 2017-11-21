@@ -5,30 +5,30 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import system.entity.Costs;
-import system.service.ExpensesService;
+import system.service.CostService;
 
 import java.util.Map;
 
 @Controller
-@RequestMapping(value = "/expenses")
+@RequestMapping(value = "/cost")
 public class CostController {
 
-    private final ExpensesService expensesService;
+    private final CostService costService;
 
     @Autowired
-    public CostController(ExpensesService expensesService) {
-        this.expensesService = expensesService;
+    public CostController(CostService costService) {
+        this.costService = costService;
     }
 
     /** Outputting ALL costs in /mvc/expenses/list
      * @param model automatically by Spring ???
-     * @return view costsList.jsp */
+     * @return view costAll.jsp */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String ShowCostsList(Map<String, Object> model) {
         Costs costs = new Costs();
-        costs.getCostList().addAll(this.expensesService.findCosts());
-        model.put("costs", costs);
-        return "costs/costsList";
+        costs.getCostList().addAll(this.costService.findCosts());
+        model.put("cost", costs);
+        return "cost/costAll";
     }
 
 
