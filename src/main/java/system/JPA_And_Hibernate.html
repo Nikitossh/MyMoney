@@ -153,7 +153,7 @@
 
 <p>
     <!--TODO Вынести это в отдельный файл и запомнить где он хранится!!!-->
-    Пошаговое создание git репозитория.
+    <h3>Пошаговое создание git репозитория.</h3>
     Зашел в директорию проекта cd ~/Documents/project/MyMoney
     сделал git init
     Добавил все файлы в репозиторий git add *
@@ -163,6 +163,18 @@
     ssh-add ~/.ssh/id_rsa
     git pull -u mymoney master
     git push -u mymoney master
+
+    <h3>Работа с ветками в Git</h3>
+    git branch test         создание ветки test
+    git branch -d test      удаление ветки test
+    git checkout test       переключение на ветку
+    git checkout -b t53     сокращенная запись двух верхних
+
+    Для слияния переходим в ветку, в которую хотим слить изменения, затем сливаем из указанной ветки.
+    git checkout master
+    git merge test
+
+
 </p>
 
 <h5>13 ноября 2017 г.</h5>
