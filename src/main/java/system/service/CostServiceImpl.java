@@ -21,4 +21,9 @@ public class CostServiceImpl implements CostService {
         return costRepository.findAll();
     }
 
+    @Override
+    public Collection<? extends Cost> findMonthCost() {
+        return this.costRepository.findMonthCost();
+    }
+
 }

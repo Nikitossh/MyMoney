@@ -6,4 +6,5 @@ import java.util.Collection;
 
 public interface CostService {
     Collection<Cost> findCosts();
+    Collection<? extends Cost> findMonthCost();
 }
